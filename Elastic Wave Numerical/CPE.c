@@ -552,6 +552,9 @@ void funVelocity()
                                 pmlxSxxSlave[inderslave1] = edxi2Slave[inderslave1] * pmlxSxxSlave[inderslave1] + xFHalfTemp2 * (edxi2Slave[inderslave1] * DxSxxPreSlave[inderslave1] + xx1);
                                 pmlySxySlave[inderslave1] = edyjSlave[inderslave1] * pmlySxySlave[inderslave1] + yFIntTemp2 * (edyjSlave[inderslave1] * DySxyPreSlave[inderslave1] + xy1);
                                 pmlzSxzSlave[inderslave1] = edzkSlave[inderslave1] * pmlzSxzSlave[inderslave1] + zFIntTemp2 * (edzkSlave[inderslave1] * DzSxzPreSlave[inderslave1] + xz1);
+                                DxSxxPreSlave[inderslave1] = xx1;
+                                DySxyPreSlave[inderslave1] = xy1;
+                                DzSxzPreSlave[inderslave1] = xz1;
                                 xx1 = xx1 + pmlxSxxSlave[inderslave1];
                                 xy1 = xy1 + pmlySxySlave[inderslave1];
                                 xz1 = xz1 + pmlzSxzSlave[inderslave1];
@@ -559,6 +562,9 @@ void funVelocity()
                                 pmlxSxySlave[inderslave1] = edxiSlave[inderslave1] * pmlxSxySlave[inderslave1] + xFIntTemp2 * (edxiSlave[inderslave1] * DxSxyPreSlave[inderslave1] + yx2);
                                 pmlySyySlave[inderslave1] = edyj2Slave[inderslave1] * pmlySyySlave[inderslave1] + yFHalfTemp2 * (edyj2Slave[inderslave1] * DySyyPreSlave[inderslave1] + yy2);
                                 pmlzSyzSlave[inderslave1] = edzkSlave[inderslave1] * pmlzSyzSlave[inderslave1] + zFIntTemp2 * (edzkSlave[inderslave1] * DzSyzPreSlave[inderslave1] + yz2);
+                                DxSxyPreSlave[inderslave1] = yx2;
+                                DySyyPreSlave[inderslave1] = yy2;
+                                DzSyzPreSlave[inderslave1] = yz2;
                                 yx2 = yx2 + pmlxSxySlave[inderslave1];
                                 yy2 = yy2 + pmlySyySlave[inderslave1];
                                 yz2 = yz2 + pmlzSyzSlave[inderslave1];
@@ -566,6 +572,9 @@ void funVelocity()
                                 pmlxSxzSlave[inderslave1] = edxiSlave[inderslave1] * pmlxSxzSlave[inderslave1] + xFIntTemp2 * (edxiSlave[inderslave1] * DxSxzPreSlave[inderslave1] + zx3);
                                 pmlySyzSlave[inderslave1] = edyjSlave[inderslave1] * pmlySyzSlave[inderslave1] + yFIntTemp2 * (edyjSlave[inderslave1] * DySyzPreSlave[inderslave1] + zy3);
                                 pmlzSzzSlave[inderslave1] = edzk2Slave[inderslave1] * pmlzSzzSlave[inderslave1] + zFHalfTemp2 * (edzk2Slave[inderslave1] * DzSzzPreSlave[inderslave1] + zz3);
+                                DxSxzPreSlave[inderslave1] = zx3;
+                                DySyzPreSlave[inderslave1] = zy3;
+                                DzSzzPreSlave[inderslave1] = zz3;
                                 zx3 = zx3 + pmlxSxzSlave[inderslave1];
                                 zy3 = zy3 + pmlySyzSlave[inderslave1];
                                 zz3 = zz3 + pmlzSzzSlave[inderslave1];
@@ -573,16 +582,6 @@ void funVelocity()
                                 vxSlaveresult[inderslave1] = vxSlave[inderslave1] + (DT * rho_tempx) * (xx1 + xy1 + xz1);
                                 vySlaveresult[inderslave1] = vySlave[inderslave1] + (DT * rho_tempy) * (yx2 + yy2 + yz2);
                                 vzSlaveresult[inderslave1] = vzSlave[inderslave1] + (DT * rho_tempz) * (zx3 + zy3 + zz3);
-
-                                DxSxxPreSlave[inderslave1] = xx1;
-                                DySxyPreSlave[inderslave1] = xy1;
-                                DzSxzPreSlave[inderslave1] = xz1;
-                                DxSxyPreSlave[inderslave1] = yx2;
-                                DySyyPreSlave[inderslave1] = yy2;
-                                DzSyzPreSlave[inderslave1] = yz2;
-                                DxSxzPreSlave[inderslave1] = zx3;
-                                DySyzPreSlave[inderslave1] = zy3;
-                                DzSzzPreSlave[inderslave1] = zz3;
                             }
                         }
                     }
@@ -634,6 +633,9 @@ void funVelocity()
                                 pmlxSxxSlave[inderslave1] = edxi2Slave[inderslave1] * pmlxSxxSlave[inderslave1] + xFHalfTemp2 * (edxi2Slave[inderslave1] * DxSxxPreSlave[inderslave1] + xx1);
                                 pmlySxySlave[inderslave1] = edyjSlave[inderslave1] * pmlySxySlave[inderslave1] + yFIntTemp2 * (edyjSlave[inderslave1] * DySxyPreSlave[inderslave1] + xy1);
                                 pmlzSxzSlave[inderslave1] = edzkSlave[inderslave1] * pmlzSxzSlave[inderslave1] + zFIntTemp2 * (edzkSlave[inderslave1] * DzSxzPreSlave[inderslave1] + xz1);
+                                DxSxxPreSlave[inderslave1] = xx1;
+                                DySxyPreSlave[inderslave1] = xy1;
+                                DzSxzPreSlave[inderslave1] = xz1;
                                 xx1 = xx1 + pmlxSxxSlave[inderslave1];
                                 xy1 = xy1 + pmlySxySlave[inderslave1];
                                 xz1 = xz1 + pmlzSxzSlave[inderslave1];
@@ -641,6 +643,9 @@ void funVelocity()
                                 pmlxSxySlave[inderslave1] = edxiSlave[inderslave1] * pmlxSxySlave[inderslave1] + xFIntTemp2 * (edxiSlave[inderslave1] * DxSxyPreSlave[inderslave1] + yx2);
                                 pmlySyySlave[inderslave1] = edyj2Slave[inderslave1] * pmlySyySlave[inderslave1] + yFHalfTemp2 * (edyj2Slave[inderslave1] * DySyyPreSlave[inderslave1] + yy2);
                                 pmlzSyzSlave[inderslave1] = edzkSlave[inderslave1] * pmlzSyzSlave[inderslave1] + zFIntTemp2 * (edzkSlave[inderslave1] * DzSyzPreSlave[inderslave1] + yz2);
+                                DxSxyPreSlave[inderslave1] = yx2;
+                                DySyyPreSlave[inderslave1] = yy2;
+                                DzSyzPreSlave[inderslave1] = yz2;
                                 yx2 = yx2 + pmlxSxySlave[inderslave1];
                                 yy2 = yy2 + pmlySyySlave[inderslave1];
                                 yz2 = yz2 + pmlzSyzSlave[inderslave1];
@@ -648,6 +653,9 @@ void funVelocity()
                                 pmlxSxzSlave[inderslave1] = edxiSlave[inderslave1] * pmlxSxzSlave[inderslave1] + xFIntTemp2 * (edxiSlave[inderslave1] * DxSxzPreSlave[inderslave1] + zx3);
                                 pmlySyzSlave[inderslave1] = edyjSlave[inderslave1] * pmlySyzSlave[inderslave1] + yFIntTemp2 * (edyjSlave[inderslave1] * DySyzPreSlave[inderslave1] + zy3);
                                 pmlzSzzSlave[inderslave1] = edzk2Slave[inderslave1] * pmlzSzzSlave[inderslave1] + zFHalfTemp2 * (edzk2Slave[inderslave1] * DzSzzPreSlave[inderslave1] + zz3);
+                                DxSxzPreSlave[inderslave1] = zx3;
+                                DySyzPreSlave[inderslave1] = zy3;
+                                DzSzzPreSlave[inderslave1] = zz3;
                                 zx3 = zx3 + pmlxSxzSlave[inderslave1];
                                 zy3 = zy3 + pmlySyzSlave[inderslave1];
                                 zz3 = zz3 + pmlzSzzSlave[inderslave1];
@@ -655,16 +663,6 @@ void funVelocity()
                                 vxSlaveresult[inderslave1] = vxSlave[inderslave1] + (DT * rho_tempx) * (xx1 + xy1 + xz1);
                                 vySlaveresult[inderslave1] = vySlave[inderslave1] + (DT * rho_tempy) * (yx2 + yy2 + yz2);
                                 vzSlaveresult[inderslave1] = vzSlave[inderslave1] + (DT * rho_tempz) * (zx3 + zy3 + zz3);
-
-                                DxSxxPreSlave[inderslave1] = xx1;
-                                DySxyPreSlave[inderslave1] = xy1;
-                                DzSxzPreSlave[inderslave1] = xz1;
-                                DxSxyPreSlave[inderslave1] = yx2;
-                                DySyyPreSlave[inderslave1] = yy2;
-                                DzSyzPreSlave[inderslave1] = yz2;
-                                DxSxzPreSlave[inderslave1] = zx3;
-                                DySyzPreSlave[inderslave1] = zy3;
-                                DzSzzPreSlave[inderslave1] = zz3;
                             }
                         }
                     }
@@ -716,6 +714,9 @@ void funVelocity()
                                 pmlxSxxSlave[inderslave1] = edxi2Slave[inderslave1] * pmlxSxxSlave[inderslave1] + xFHalfTemp2 * (edxi2Slave[inderslave1] * DxSxxPreSlave[inderslave1] + xx1);
                                 pmlySxySlave[inderslave1] = edyjSlave[inderslave1] * pmlySxySlave[inderslave1] + yFIntTemp2 * (edyjSlave[inderslave1] * DySxyPreSlave[inderslave1] + xy1);
                                 pmlzSxzSlave[inderslave1] = edzkSlave[inderslave1] * pmlzSxzSlave[inderslave1] + zFIntTemp2 * (edzkSlave[inderslave1] * DzSxzPreSlave[inderslave1] + xz1);
+                                DxSxxPreSlave[inderslave1] = xx1;
+                                DySxyPreSlave[inderslave1] = xy1;
+                                DzSxzPreSlave[inderslave1] = xz1;
                                 xx1 = xx1 + pmlxSxxSlave[inderslave1];
                                 xy1 = xy1 + pmlySxySlave[inderslave1];
                                 xz1 = xz1 + pmlzSxzSlave[inderslave1];
@@ -723,6 +724,9 @@ void funVelocity()
                                 pmlxSxySlave[inderslave1] = edxiSlave[inderslave1] * pmlxSxySlave[inderslave1] + xFIntTemp2 * (edxiSlave[inderslave1] * DxSxyPreSlave[inderslave1] + yx2);
                                 pmlySyySlave[inderslave1] = edyj2Slave[inderslave1] * pmlySyySlave[inderslave1] + yFHalfTemp2 * (edyj2Slave[inderslave1] * DySyyPreSlave[inderslave1] + yy2);
                                 pmlzSyzSlave[inderslave1] = edzkSlave[inderslave1] * pmlzSyzSlave[inderslave1] + zFIntTemp2 * (edzkSlave[inderslave1] * DzSyzPreSlave[inderslave1] + yz2);
+                                DxSxyPreSlave[inderslave1] = yx2;
+                                DySyyPreSlave[inderslave1] = yy2;
+                                DzSyzPreSlave[inderslave1] = yz2;
                                 yx2 = yx2 + pmlxSxySlave[inderslave1];
                                 yy2 = yy2 + pmlySyySlave[inderslave1];
                                 yz2 = yz2 + pmlzSyzSlave[inderslave1];
@@ -730,6 +734,9 @@ void funVelocity()
                                 pmlxSxzSlave[inderslave1] = edxiSlave[inderslave1] * pmlxSxzSlave[inderslave1] + xFIntTemp2 * (edxiSlave[inderslave1] * DxSxzPreSlave[inderslave1] + zx3);
                                 pmlySyzSlave[inderslave1] = edyjSlave[inderslave1] * pmlySyzSlave[inderslave1] + yFIntTemp2 * (edyjSlave[inderslave1] * DySyzPreSlave[inderslave1] + zy3);
                                 pmlzSzzSlave[inderslave1] = edzk2Slave[inderslave1] * pmlzSzzSlave[inderslave1] + zFHalfTemp2 * (edzk2Slave[inderslave1] * DzSzzPreSlave[inderslave1] + zz3);
+                                DxSxzPreSlave[inderslave1] = zx3;
+                                DySyzPreSlave[inderslave1] = zy3;
+                                DzSzzPreSlave[inderslave1] = zz3;
                                 zx3 = zx3 + pmlxSxzSlave[inderslave1];
                                 zy3 = zy3 + pmlySyzSlave[inderslave1];
                                 zz3 = zz3 + pmlzSzzSlave[inderslave1];
@@ -737,16 +744,6 @@ void funVelocity()
                                 vxSlaveresult[inderslave1] = vxSlave[inderslave1] + (DT * rho_tempx) * (xx1 + xy1 + xz1);
                                 vySlaveresult[inderslave1] = vySlave[inderslave1] + (DT * rho_tempy) * (yx2 + yy2 + yz2);
                                 vzSlaveresult[inderslave1] = vzSlave[inderslave1] + (DT * rho_tempz) * (zx3 + zy3 + zz3);
-
-                                DxSxxPreSlave[inderslave1] = xx1;
-                                DySxyPreSlave[inderslave1] = xy1;
-                                DzSxzPreSlave[inderslave1] = xz1;
-                                DxSxyPreSlave[inderslave1] = yx2;
-                                DySyyPreSlave[inderslave1] = yy2;
-                                DzSyzPreSlave[inderslave1] = yz2;
-                                DxSxzPreSlave[inderslave1] = zx3;
-                                DySyzPreSlave[inderslave1] = zy3;
-                                DzSzzPreSlave[inderslave1] = zz3;
                             }
                         }
                     }
@@ -798,6 +795,9 @@ void funVelocity()
                                 pmlxSxxSlave[inderslave1] = edxi2Slave[inderslave1] * pmlxSxxSlave[inderslave1] + xFHalfTemp2 * (edxi2Slave[inderslave1] * DxSxxPreSlave[inderslave1] + xx1);
                                 pmlySxySlave[inderslave1] = edyjSlave[inderslave1] * pmlySxySlave[inderslave1] + yFIntTemp2 * (edyjSlave[inderslave1] * DySxyPreSlave[inderslave1] + xy1);
                                 pmlzSxzSlave[inderslave1] = edzkSlave[inderslave1] * pmlzSxzSlave[inderslave1] + zFIntTemp2 * (edzkSlave[inderslave1] * DzSxzPreSlave[inderslave1] + xz1);
+                                DxSxxPreSlave[inderslave1] = xx1;
+                                DySxyPreSlave[inderslave1] = xy1;
+                                DzSxzPreSlave[inderslave1] = xz1;
                                 xx1 = xx1 + pmlxSxxSlave[inderslave1];
                                 xy1 = xy1 + pmlySxySlave[inderslave1];
                                 xz1 = xz1 + pmlzSxzSlave[inderslave1];
@@ -805,6 +805,9 @@ void funVelocity()
                                 pmlxSxySlave[inderslave1] = edxiSlave[inderslave1] * pmlxSxySlave[inderslave1] + xFIntTemp2 * (edxiSlave[inderslave1] * DxSxyPreSlave[inderslave1] + yx2);
                                 pmlySyySlave[inderslave1] = edyj2Slave[inderslave1] * pmlySyySlave[inderslave1] + yFHalfTemp2 * (edyj2Slave[inderslave1] * DySyyPreSlave[inderslave1] + yy2);
                                 pmlzSyzSlave[inderslave1] = edzkSlave[inderslave1] * pmlzSyzSlave[inderslave1] + zFIntTemp2 * (edzkSlave[inderslave1] * DzSyzPreSlave[inderslave1] + yz2);
+                                DxSxyPreSlave[inderslave1] = yx2;
+                                DySyyPreSlave[inderslave1] = yy2;
+                                DzSyzPreSlave[inderslave1] = yz2;
                                 yx2 = yx2 + pmlxSxySlave[inderslave1];
                                 yy2 = yy2 + pmlySyySlave[inderslave1];
                                 yz2 = yz2 + pmlzSyzSlave[inderslave1];
@@ -812,6 +815,9 @@ void funVelocity()
                                 pmlxSxzSlave[inderslave1] = edxiSlave[inderslave1] * pmlxSxzSlave[inderslave1] + xFIntTemp2 * (edxiSlave[inderslave1] * DxSxzPreSlave[inderslave1] + zx3);
                                 pmlySyzSlave[inderslave1] = edyjSlave[inderslave1] * pmlySyzSlave[inderslave1] + yFIntTemp2 * (edyjSlave[inderslave1] * DySyzPreSlave[inderslave1] + zy3);
                                 pmlzSzzSlave[inderslave1] = edzk2Slave[inderslave1] * pmlzSzzSlave[inderslave1] + zFHalfTemp2 * (edzk2Slave[inderslave1] * DzSzzPreSlave[inderslave1] + zz3);
+                                DxSxzPreSlave[inderslave1] = zx3;
+                                DySyzPreSlave[inderslave1] = zy3;
+                                DzSzzPreSlave[inderslave1] = zz3;
                                 zx3 = zx3 + pmlxSxzSlave[inderslave1];
                                 zy3 = zy3 + pmlySyzSlave[inderslave1];
                                 zz3 = zz3 + pmlzSzzSlave[inderslave1];
@@ -819,16 +825,6 @@ void funVelocity()
                                 vxSlaveresult[inderslave1] = vxSlave[inderslave1] + (DT * rho_tempx) * (xx1 + xy1 + xz1);
                                 vySlaveresult[inderslave1] = vySlave[inderslave1] + (DT * rho_tempy) * (yx2 + yy2 + yz2);
                                 vzSlaveresult[inderslave1] = vzSlave[inderslave1] + (DT * rho_tempz) * (zx3 + zy3 + zz3);
-
-                                DxSxxPreSlave[inderslave1] = xx1;
-                                DySxyPreSlave[inderslave1] = xy1;
-                                DzSxzPreSlave[inderslave1] = xz1;
-                                DxSxyPreSlave[inderslave1] = yx2;
-                                DySyyPreSlave[inderslave1] = yy2;
-                                DzSyzPreSlave[inderslave1] = yz2;
-                                DxSxzPreSlave[inderslave1] = zx3;
-                                DySyzPreSlave[inderslave1] = zy3;
-                                DzSzzPreSlave[inderslave1] = zz3;
                             }
                         }
                     }
@@ -1541,22 +1537,31 @@ void funStress()
                                 pmlxVxSlave[inderslave1] = edxiSlave[inderslave1] * pmlxVxSlave[inderslave1] + xFIntTemp2 * (edxiSlave[inderslave1] * DxVxPreSlave[inderslave1] + y5);
                                 pmlyVySlave[inderslave1] = edyjSlave[inderslave1] * pmlyVySlave[inderslave1] + yFIntTemp2 * (edyjSlave[inderslave1] * DyVyPreSlave[inderslave1] + y6);
                                 pmlzVzSlave[inderslave1] = edzkSlave[inderslave1] * pmlzVzSlave[inderslave1] + zFIntTemp2 * (edzkSlave[inderslave1] * DzVzPreSlave[inderslave1] + y7);
+                                DxVxPreSlave[inderslave1] = y5;
+                                DyVyPreSlave[inderslave1] = y6;
+                                DzVzPreSlave[inderslave1] = y7;
                                 y5 = y5 + pmlxVxSlave[inderslave1];
                                 y6 = y6 + pmlyVySlave[inderslave1];
                                 y7 = y7 + pmlzVzSlave[inderslave1];
 
                                 pmlzVxSlave[inderslave1] = edzk2Slave[inderslave1] * pmlzVxSlave[inderslave1] + zFHalfTemp2 * (edzk2Slave[inderslave1] * DzVxPreSlave[inderslave1] + y10);
                                 pmlxVzSlave[inderslave1] = edxi2Slave[inderslave1] * pmlxVzSlave[inderslave1] + xFHalfTemp2 * (edxi2Slave[inderslave1] * DxVzPreSlave[inderslave1] + y11);
+                                DzVxPreSlave[inderslave1] = y10;
+                                DxVzPreSlave[inderslave1] = y11;
                                 y10 = y10 + pmlzVxSlave[inderslave1];
                                 y11 = y11 + pmlxVzSlave[inderslave1];
 
                                 pmlyVxSlave[inderslave1] = edyj2Slave[inderslave1] * pmlyVxSlave[inderslave1] + yFHalfTemp2 * (edyj2Slave[inderslave1] * DyVxPreSlave[inderslave1] + y8);
                                 pmlxVySlave[inderslave1] = edxi2Slave[inderslave1] * pmlxVySlave[inderslave1] + xFHalfTemp2 * (edxi2Slave[inderslave1] * DxVyPreSlave[inderslave1] + y9);
+                                DyVxPreSlave[inderslave1] = y8;
+                                DxVyPreSlave[inderslave1] = y9;
                                 y8 = y8 + pmlyVxSlave[inderslave1];
                                 y9 = y9 + pmlxVySlave[inderslave1];
 
                                 pmlzVySlave[inderslave1] = edzk2Slave[inderslave1] * pmlzVySlave[inderslave1] + zFHalfTemp2 * (edzk2Slave[inderslave1] * DzVyPreSlave[inderslave1] + y12);
                                 pmlyVzSlave[inderslave1] = edyj2Slave[inderslave1] * pmlyVzSlave[inderslave1] + yFHalfTemp2 * (edyj2Slave[inderslave1] * DyVzPreSlave[inderslave1] + y13);
+                                DzVyPreSlave[inderslave1] = y12;
+                                DyVzPreSlave[inderslave1] = y13;
                                 y12 = y12 + pmlzVySlave[inderslave1];
                                 y13 = y13 + pmlyVzSlave[inderslave1];
 
@@ -1567,16 +1572,6 @@ void funStress()
                                 txzSlaveresult[inderslave1] = txzSlave[inderslave1] + (muxzSlave[inderslave1] * DT) * (y10 + y11);
                                 txySlaveresult[inderslave1] = txySlave[inderslave1] + (muxySlave[inderslave1] * DT) * (y8 + y9);
                                 tyzSlaveresult[inderslave1] = tyzSlave[inderslave1] + (muyzSlave[inderslave1] * DT) * (y12 + y13);
-
-                                DxVxPreSlave[inderslave1] = y5;
-                                DyVyPreSlave[inderslave1] = y6;
-                                DzVzPreSlave[inderslave1] = y7;
-                                DyVxPreSlave[inderslave1] = y8;
-                                DxVyPreSlave[inderslave1] = y9;
-                                DzVxPreSlave[inderslave1] = y10;
-                                DxVzPreSlave[inderslave1] = y11;
-                                DzVyPreSlave[inderslave1] = y12;
-                                DyVzPreSlave[inderslave1] = y13;
                             }
                         }
                     }
@@ -1618,22 +1613,31 @@ void funStress()
                                 pmlxVxSlave[inderslave1] = edxiSlave[inderslave1] * pmlxVxSlave[inderslave1] + xFIntTemp2 * (edxiSlave[inderslave1] * DxVxPreSlave[inderslave1] + y5);
                                 pmlyVySlave[inderslave1] = edyjSlave[inderslave1] * pmlyVySlave[inderslave1] + yFIntTemp2 * (edyjSlave[inderslave1] * DyVyPreSlave[inderslave1] + y6);
                                 pmlzVzSlave[inderslave1] = edzkSlave[inderslave1] * pmlzVzSlave[inderslave1] + zFIntTemp2 * (edzkSlave[inderslave1] * DzVzPreSlave[inderslave1] + y7);
+                                DxVxPreSlave[inderslave1] = y5;
+                                DyVyPreSlave[inderslave1] = y6;
+                                DzVzPreSlave[inderslave1] = y7;
                                 y5 = y5 + pmlxVxSlave[inderslave1];
                                 y6 = y6 + pmlyVySlave[inderslave1];
                                 y7 = y7 + pmlzVzSlave[inderslave1];
 
                                 pmlzVxSlave[inderslave1] = edzk2Slave[inderslave1] * pmlzVxSlave[inderslave1] + zFHalfTemp2 * (edzk2Slave[inderslave1] * DzVxPreSlave[inderslave1] + y10);
                                 pmlxVzSlave[inderslave1] = edxi2Slave[inderslave1] * pmlxVzSlave[inderslave1] + xFHalfTemp2 * (edxi2Slave[inderslave1] * DxVzPreSlave[inderslave1] + y11);
+                                DzVxPreSlave[inderslave1] = y10;
+                                DxVzPreSlave[inderslave1] = y11;
                                 y10 = y10 + pmlzVxSlave[inderslave1];
                                 y11 = y11 + pmlxVzSlave[inderslave1];
 
                                 pmlyVxSlave[inderslave1] = edyj2Slave[inderslave1] * pmlyVxSlave[inderslave1] + yFHalfTemp2 * (edyj2Slave[inderslave1] * DyVxPreSlave[inderslave1] + y8);
                                 pmlxVySlave[inderslave1] = edxi2Slave[inderslave1] * pmlxVySlave[inderslave1] + xFHalfTemp2 * (edxi2Slave[inderslave1] * DxVyPreSlave[inderslave1] + y9);
+                                DyVxPreSlave[inderslave1] = y8;
+                                DxVyPreSlave[inderslave1] = y9;
                                 y8 = y8 + pmlyVxSlave[inderslave1];
                                 y9 = y9 + pmlxVySlave[inderslave1];
 
                                 pmlzVySlave[inderslave1] = edzk2Slave[inderslave1] * pmlzVySlave[inderslave1] + zFHalfTemp2 * (edzk2Slave[inderslave1] * DzVyPreSlave[inderslave1] + y12);
                                 pmlyVzSlave[inderslave1] = edyj2Slave[inderslave1] * pmlyVzSlave[inderslave1] + yFHalfTemp2 * (edyj2Slave[inderslave1] * DyVzPreSlave[inderslave1] + y13);
+                                DzVyPreSlave[inderslave1] = y12;
+                                DyVzPreSlave[inderslave1] = y13;
                                 y12 = y12 + pmlzVySlave[inderslave1];
                                 y13 = y13 + pmlyVzSlave[inderslave1];
 
@@ -1644,16 +1648,6 @@ void funStress()
                                 txzSlaveresult[inderslave1] = txzSlave[inderslave1] + (muxzSlave[inderslave1] * DT) * (y10 + y11);
                                 txySlaveresult[inderslave1] = txySlave[inderslave1] + (muxySlave[inderslave1] * DT) * (y8 + y9);
                                 tyzSlaveresult[inderslave1] = tyzSlave[inderslave1] + (muyzSlave[inderslave1] * DT) * (y12 + y13);
-
-                                DxVxPreSlave[inderslave1] = y5;
-                                DyVyPreSlave[inderslave1] = y6;
-                                DzVzPreSlave[inderslave1] = y7;
-                                DyVxPreSlave[inderslave1] = y8;
-                                DxVyPreSlave[inderslave1] = y9;
-                                DzVxPreSlave[inderslave1] = y10;
-                                DxVzPreSlave[inderslave1] = y11;
-                                DzVyPreSlave[inderslave1] = y12;
-                                DyVzPreSlave[inderslave1] = y13;
                             }
                         }
                     }
@@ -1695,22 +1689,31 @@ void funStress()
                                 pmlxVxSlave[inderslave1] = edxiSlave[inderslave1] * pmlxVxSlave[inderslave1] + xFIntTemp2 * (edxiSlave[inderslave1] * DxVxPreSlave[inderslave1] + y5);
                                 pmlyVySlave[inderslave1] = edyjSlave[inderslave1] * pmlyVySlave[inderslave1] + yFIntTemp2 * (edyjSlave[inderslave1] * DyVyPreSlave[inderslave1] + y6);
                                 pmlzVzSlave[inderslave1] = edzkSlave[inderslave1] * pmlzVzSlave[inderslave1] + zFIntTemp2 * (edzkSlave[inderslave1] * DzVzPreSlave[inderslave1] + y7);
+                                DxVxPreSlave[inderslave1] = y5;
+                                DyVyPreSlave[inderslave1] = y6;
+                                DzVzPreSlave[inderslave1] = y7;
                                 y5 = y5 + pmlxVxSlave[inderslave1];
                                 y6 = y6 + pmlyVySlave[inderslave1];
                                 y7 = y7 + pmlzVzSlave[inderslave1];
 
                                 pmlzVxSlave[inderslave1] = edzk2Slave[inderslave1] * pmlzVxSlave[inderslave1] + zFHalfTemp2 * (edzk2Slave[inderslave1] * DzVxPreSlave[inderslave1] + y10);
                                 pmlxVzSlave[inderslave1] = edxi2Slave[inderslave1] * pmlxVzSlave[inderslave1] + xFHalfTemp2 * (edxi2Slave[inderslave1] * DxVzPreSlave[inderslave1] + y11);
+                                DzVxPreSlave[inderslave1] = y10;
+                                DxVzPreSlave[inderslave1] = y11;
                                 y10 = y10 + pmlzVxSlave[inderslave1];
                                 y11 = y11 + pmlxVzSlave[inderslave1];
 
                                 pmlyVxSlave[inderslave1] = edyj2Slave[inderslave1] * pmlyVxSlave[inderslave1] + yFHalfTemp2 * (edyj2Slave[inderslave1] * DyVxPreSlave[inderslave1] + y8);
                                 pmlxVySlave[inderslave1] = edxi2Slave[inderslave1] * pmlxVySlave[inderslave1] + xFHalfTemp2 * (edxi2Slave[inderslave1] * DxVyPreSlave[inderslave1] + y9);
+                                DyVxPreSlave[inderslave1] = y8;
+                                DxVyPreSlave[inderslave1] = y9;
                                 y8 = y8 + pmlyVxSlave[inderslave1];
                                 y9 = y9 + pmlxVySlave[inderslave1];
 
                                 pmlzVySlave[inderslave1] = edzk2Slave[inderslave1] * pmlzVySlave[inderslave1] + zFHalfTemp2 * (edzk2Slave[inderslave1] * DzVyPreSlave[inderslave1] + y12);
                                 pmlyVzSlave[inderslave1] = edyj2Slave[inderslave1] * pmlyVzSlave[inderslave1] + yFHalfTemp2 * (edyj2Slave[inderslave1] * DyVzPreSlave[inderslave1] + y13);
+                                DzVyPreSlave[inderslave1] = y12;
+                                DyVzPreSlave[inderslave1] = y13;
                                 y12 = y12 + pmlzVySlave[inderslave1];
                                 y13 = y13 + pmlyVzSlave[inderslave1];
 
@@ -1721,16 +1724,6 @@ void funStress()
                                 txzSlaveresult[inderslave1] = txzSlave[inderslave1] + (muxzSlave[inderslave1] * DT) * (y10 + y11);
                                 txySlaveresult[inderslave1] = txySlave[inderslave1] + (muxySlave[inderslave1] * DT) * (y8 + y9);
                                 tyzSlaveresult[inderslave1] = tyzSlave[inderslave1] + (muyzSlave[inderslave1] * DT) * (y12 + y13);
-
-                                DxVxPreSlave[inderslave1] = y5;
-                                DyVyPreSlave[inderslave1] = y6;
-                                DzVzPreSlave[inderslave1] = y7;
-                                DyVxPreSlave[inderslave1] = y8;
-                                DxVyPreSlave[inderslave1] = y9;
-                                DzVxPreSlave[inderslave1] = y10;
-                                DxVzPreSlave[inderslave1] = y11;
-                                DzVyPreSlave[inderslave1] = y12;
-                                DyVzPreSlave[inderslave1] = y13;
                             }
                         }
                     }
@@ -1772,22 +1765,31 @@ void funStress()
                                 pmlxVxSlave[inderslave1] = edxiSlave[inderslave1] * pmlxVxSlave[inderslave1] + xFIntTemp2 * (edxiSlave[inderslave1] * DxVxPreSlave[inderslave1] + y5);
                                 pmlyVySlave[inderslave1] = edyjSlave[inderslave1] * pmlyVySlave[inderslave1] + yFIntTemp2 * (edyjSlave[inderslave1] * DyVyPreSlave[inderslave1] + y6);
                                 pmlzVzSlave[inderslave1] = edzkSlave[inderslave1] * pmlzVzSlave[inderslave1] + zFIntTemp2 * (edzkSlave[inderslave1] * DzVzPreSlave[inderslave1] + y7);
+                                DxVxPreSlave[inderslave1] = y5;
+                                DyVyPreSlave[inderslave1] = y6;
+                                DzVzPreSlave[inderslave1] = y7;
                                 y5 = y5 + pmlxVxSlave[inderslave1];
                                 y6 = y6 + pmlyVySlave[inderslave1];
                                 y7 = y7 + pmlzVzSlave[inderslave1];
 
                                 pmlzVxSlave[inderslave1] = edzk2Slave[inderslave1] * pmlzVxSlave[inderslave1] + zFHalfTemp2 * (edzk2Slave[inderslave1] * DzVxPreSlave[inderslave1] + y10);
                                 pmlxVzSlave[inderslave1] = edxi2Slave[inderslave1] * pmlxVzSlave[inderslave1] + xFHalfTemp2 * (edxi2Slave[inderslave1] * DxVzPreSlave[inderslave1] + y11);
+                                DzVxPreSlave[inderslave1] = y10;
+                                DxVzPreSlave[inderslave1] = y11;
                                 y10 = y10 + pmlzVxSlave[inderslave1];
                                 y11 = y11 + pmlxVzSlave[inderslave1];
 
                                 pmlyVxSlave[inderslave1] = edyj2Slave[inderslave1] * pmlyVxSlave[inderslave1] + yFHalfTemp2 * (edyj2Slave[inderslave1] * DyVxPreSlave[inderslave1] + y8);
                                 pmlxVySlave[inderslave1] = edxi2Slave[inderslave1] * pmlxVySlave[inderslave1] + xFHalfTemp2 * (edxi2Slave[inderslave1] * DxVyPreSlave[inderslave1] + y9);
+                                DyVxPreSlave[inderslave1] = y8;
+                                DxVyPreSlave[inderslave1] = y9;
                                 y8 = y8 + pmlyVxSlave[inderslave1];
                                 y9 = y9 + pmlxVySlave[inderslave1];
 
                                 pmlzVySlave[inderslave1] = edzk2Slave[inderslave1] * pmlzVySlave[inderslave1] + zFHalfTemp2 * (edzk2Slave[inderslave1] * DzVyPreSlave[inderslave1] + y12);
                                 pmlyVzSlave[inderslave1] = edyj2Slave[inderslave1] * pmlyVzSlave[inderslave1] + yFHalfTemp2 * (edyj2Slave[inderslave1] * DyVzPreSlave[inderslave1] + y13);
+                                DzVyPreSlave[inderslave1] = y12;
+                                DyVzPreSlave[inderslave1] = y13;
                                 y12 = y12 + pmlzVySlave[inderslave1];
                                 y13 = y13 + pmlyVzSlave[inderslave1];
 
@@ -1798,16 +1800,6 @@ void funStress()
                                 txzSlaveresult[inderslave1] = txzSlave[inderslave1] + (muxzSlave[inderslave1] * DT) * (y10 + y11);
                                 txySlaveresult[inderslave1] = txySlave[inderslave1] + (muxySlave[inderslave1] * DT) * (y8 + y9);
                                 tyzSlaveresult[inderslave1] = tyzSlave[inderslave1] + (muyzSlave[inderslave1] * DT) * (y12 + y13);
-
-                                DxVxPreSlave[inderslave1] = y5;
-                                DyVyPreSlave[inderslave1] = y6;
-                                DzVzPreSlave[inderslave1] = y7;
-                                DyVxPreSlave[inderslave1] = y8;
-                                DxVyPreSlave[inderslave1] = y9;
-                                DzVxPreSlave[inderslave1] = y10;
-                                DxVzPreSlave[inderslave1] = y11;
-                                DzVyPreSlave[inderslave1] = y12;
-                                DyVzPreSlave[inderslave1] = y13;
                             }
                         }
                     }
