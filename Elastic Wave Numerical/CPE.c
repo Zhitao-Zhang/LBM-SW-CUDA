@@ -323,12 +323,12 @@ void funVelocity()
                             athread_get(PE_MODE, &tyy[transferinder1], &tyySlave[getindex1], sizeof(float) * SlaveNxt1, &get_reply, 0, 0, 0);
                             athread_get(PE_MODE, &txy[transferinder1], &txySlave[getindex1], sizeof(float) * SlaveNxt1, &get_reply, 0, 0, 0);
 
-                            athread_get(PE_MODE, &edxi[transferinder1], &edxiSlave[getindex1], sizeof(float) * (SlaveNxt1 - 2), &get_reply, 0, 0, 0);
-                            athread_get(PE_MODE, &edxi2[transferinder1], &edxi2Slave[getindex1], sizeof(float) * (SlaveNxt1 - 2), &get_reply, 0, 0, 0);
-                            athread_get(PE_MODE, &edyj[transferinder1], &edyjSlave[getindex1], sizeof(float) * (SlaveNxt1 - 2), &get_reply, 0, 0, 0);
-                            athread_get(PE_MODE, &edyj2[transferinder1], &edyj2Slave[getindex1], sizeof(float) * (SlaveNxt1 - 2), &get_reply, 0, 0, 0);
-                            athread_get(PE_MODE, &edzk[transferinder1], &edzkSlave[getindex1], sizeof(float) * (SlaveNxt1 - 2), &get_reply, 0, 0, 0);
-                            athread_get(PE_MODE, &edzk2[transferinder1], &edzk2Slave[getindex1], sizeof(float) * (SlaveNxt1 - 2), &get_reply, 0, 0, 0);
+                            athread_get(PE_MODE, &edxi[transferinder1], &edxiSlave[getindex1], sizeof(float) * SlaveNxt1, &get_reply, 0, 0, 0);
+                            athread_get(PE_MODE, &edxi2[transferinder1], &edxi2Slave[getindex1], sizeof(float) * SlaveNxt1, &get_reply, 0, 0, 0);
+                            athread_get(PE_MODE, &edyj[transferinder1], &edyjSlave[getindex1], sizeof(float) * SlaveNxt1, &get_reply, 0, 0, 0);
+                            athread_get(PE_MODE, &edyj2[transferinder1], &edyj2Slave[getindex1], sizeof(float) * SlaveNxt1, &get_reply, 0, 0, 0);
+                            athread_get(PE_MODE, &edzk[transferinder1], &edzkSlave[getindex1], sizeof(float) * SlaveNxt1, &get_reply, 0, 0, 0);
+                            athread_get(PE_MODE, &edzk2[transferinder1], &edzk2Slave[getindex1], sizeof(float) * SlaveNxt1, &get_reply, 0, 0, 0);
                             while (get_reply != 36)
                                 ;
                         }
