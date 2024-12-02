@@ -160,7 +160,7 @@ int main(int argc, char **argv)
 
     char dirpath[100];
     printf("./output/0.7/");
-    scanf("%s", dirpath);
+    fgets(dirpath, sizeof(dirpath), stdin); // 使用fgets读取路径
     // 调用读取函数
     readCompressedBinary(elastic_pre_1D, totalSize, filename);
     //**********************************************************************************
@@ -1926,3 +1926,4 @@ void create_model(float *vp, float *vs, float *rho, float *vf, float *rhof, floa
         }
     }
 }
+
