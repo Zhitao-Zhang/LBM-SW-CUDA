@@ -42,7 +42,7 @@ float **space2d(int nr, int nc);
 float ***space3d(int nr, int ny, int nc);
 void free_space2d(float **a, int nr);
 void free_space3d(float ***b, int nr, int ny);
-void wfile(char *dirpath, char filename[], float **data, int nr, int nc);
+void wfile(char filename[], float **data, int nr, int nc);
 void wfile3d(char filename[], float ***data, int nr, int ny, int nc);
 void wfile3dy(char filename[], float ***data, int nr, int ny, int nc);
 void readCompressedBinary(float *aa, int totalSize, const char *filename);
@@ -156,11 +156,8 @@ int main(int argc, char **argv)
 
     // 构建文件名
     char filename[256];
-    sprintf(filename, "./input/0.7/1000_%d_%d_%d.bin", coordx, coordy, coordz);
+    sprintf(filename, "./input/0.5/1000_%d_%d_%d.bin", coordx, coordy, coordz);
 
-    char dirpath[100];
-    printf("./output/0.7/");
-    fgets(dirpath, sizeof(dirpath), stdin); // 使用fgets读取路径
     // 调用读取函数
     readCompressedBinary(elastic_pre_1D, totalSize, filename);
     //**********************************************************************************
@@ -1549,7 +1546,7 @@ int main(int argc, char **argv)
             char sisvzname3000[] = "sisvz";
             char sisvz3000name[50];
             sprintf(sisvz3000name, "%s Pro%d Pressure%d.dat", sisvzname3000, namesisvz, namepressure);
-            wfile(dirpath, sisvz3000name, sis_vz, nzt, NT);
+            wfile(sisvz3000name, sis_vz, nzt, NT);
         }
 
         // 释放动态空间
@@ -1747,21 +1744,11 @@ void wfile1d(char filename[], float *data, int nr)
     fclose(fp);
 }
 // 将二进制数据写入文件—二维
-void wfile(char *dirpath, char filename[], float **data, int nr, int nc)
+void wfile(char filename[], float **data, int nr, int nc)
 {
     int i, j;
     FILE *fp;
-    char filepath[1000]; // 假设路径长度为1000
-
-    // 拼接目录路径和文件名
-    sprintf(filepath, "%s/%s", dirpath, filename);
-
-    fp = fopen(filepath, "wt");
-    if (fp == NULL)
-    {
-        fprintf(stderr, "Error opening file %s\n", filepath);
-        return;
-    }
+    fp = fopen(filename, "wt");
 
     for (i = 0; i < nr; i++)
     {
@@ -1773,7 +1760,7 @@ void wfile(char *dirpath, char filename[], float **data, int nr, int nc)
         }
         fprintf(fp, "\n");
     }
-
+    //          fwrite(&data[i][j],1,sizeof(float),fp);
     fclose(fp);
 }
 // 将二进制数据写入文件—三维
@@ -1926,4 +1913,5 @@ void create_model(float *vp, float *vs, float *rho, float *vf, float *rhof, floa
         }
     }
 }
+
 
