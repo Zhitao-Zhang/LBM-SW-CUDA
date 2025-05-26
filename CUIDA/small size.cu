@@ -806,7 +806,7 @@ int main()
 		CalTempt << < blocksPerGrid, threadsPerBlock >> > (d_tempt, d_ff, Boundary, d_nonzero_indices_x, d_nonzero_indices_y, d_nonzero_indices_z);
 		cudaDeviceSynchronize();
 
-		CalBGK << < Blocksize, Gridsize >> > (d_u_x, d_u_y, d_u_z, d_ux, d_uy, d_uz, d_F1sx, d_F1sy, d_F1sz, d_Fmx1, d_Fmy1, d_Fmz1, d_Fmx2, d_Fmy2, d_Fmz2, d_rho, d_cu, d_feq, d_ff, tau);
+		CalBGK <<< Gridsize, Blocksize >>> (d_u_x, d_u_y, d_u_z, d_ux, d_uy, d_uz, d_F1sx, d_F1sy, d_F1sz, d_Fmx1, d_Fmy1, d_Fmz1, d_Fmx2, d_Fmy2, d_Fmz2, d_rho, d_cu, d_feq, d_ff, tau);
 		cudaDeviceSynchronize();
 
 
@@ -816,10 +816,10 @@ int main()
 
 		for (int i = 0; i < npop; i++)
 		{
-			UpdateMidff << < Blocksize, Gridsize >> > (d_fftemp, d_ff, i);
+			UpdateMidff <<< Gridsize, Blocksize >>> (d_fftemp, d_ff, i);
 			cudaDeviceSynchronize();
 
-			Updateff << < Blocksize, Gridsize >> > (d_fftemp, d_ff, i);
+			Updateff <<< Gridsize, Blocksize >>> (d_fftemp, d_ff, i);
 			cudaDeviceSynchronize();
 
 		}
@@ -859,36 +859,36 @@ int main()
 
 		}*/
 
-		Updaterho << < Blocksize, Gridsize >> > (d_rho, d_ff);
+		Updaterho <<< Gridsize, Blocksize >>> (d_rho, d_ff);
 		cudaDeviceSynchronize();
 
-		UpdateUPot << < Blocksize, Gridsize >> > (d_ux, d_uy, d_uz, d_ff, d_pp, d_rho, G1, d_psx);
+		UpdateUPot <<< Gridsize, Blocksize >>> (d_ux, d_uy, d_uz, d_ff, d_pp, d_rho, G1, d_psx);
 		cudaDeviceSynchronize();
 
 
 		PotBoundary << < blocksPerGrid, threadsPerBlock >> > (d_psx, Boundary, d_nonzero_indices_x, d_nonzero_indices_y, d_nonzero_indices_z);
 		cudaDeviceSynchronize();
 
-		CalP << < Blocksize, Gridsize >> > (d_p, d_rho, G1, d_psx);
+		CalP <<< Gridsize, Blocksize >>> (d_p, d_rho, G1, d_psx);
 		cudaDeviceSynchronize();
 
 
 		for (int i = 0; i < npop; i++)
 		{
-			UpdateMidPot << < Blocksize, Gridsize >> > (d_psxpretemp, d_psx, d_spretemp, d_obst, i);
+			UpdateMidPot <<< Gridsize, Blocksize >>> (d_psxpretemp, d_psx, d_spretemp, d_obst, i);
 			cudaDeviceSynchronize();
 
-			UpdatePot << < Blocksize, Gridsize >> > (d_psxpre, d_psxpretemp, d_spre, d_spretemp, i);
+			UpdatePot <<< Gridsize, Blocksize >>> (d_psxpre, d_psxpretemp, d_spre, d_spretemp, i);
 			cudaDeviceSynchronize();
 		}
 
-		CalF << < Blocksize, Gridsize >> > (d_smx_pre1, d_smy_pre1, d_smz_pre1, d_Fmx1, d_Fmy1, d_Fmz1, d_Fmx2, d_Fmy2, d_Fmz2, d_spre, d_psxpre);
+		CalF <<< Gridsize, Blocksize >>> (d_smx_pre1, d_smy_pre1, d_smz_pre1, d_Fmx1, d_Fmy1, d_Fmz1, d_Fmx2, d_Fmy2, d_Fmz2, d_spre, d_psxpre);
 		cudaDeviceSynchronize();
 
 		BoundaryF << < blocksPerGrid, threadsPerBlock >> > (d_Fmx1, d_Fmy1, d_Fmz1, d_Fmx2, d_Fmy2, d_Fmz2, d_smx_pre1, d_smy_pre1, d_smz_pre1, d_nonzero_indices_x, d_nonzero_indices_y, d_nonzero_indices_z, Boundary);
 		cudaDeviceSynchronize();
 
-		UpdateF << < Blocksize, Gridsize >> > (d_F1sx, d_F1sy, d_F1sz, d_Fmx1, d_Fmy1, d_Fmz1, d_Fmx2, d_Fmy2, d_Fmz2, d_psx, d_smx_pre1, d_smy_pre1, d_smz_pre1, G1, G2, B);
+		UpdateF <<< Gridsize, Blocksize >>> (d_F1sx, d_F1sy, d_F1sz, d_Fmx1, d_Fmy1, d_Fmz1, d_Fmx2, d_Fmy2, d_Fmz2, d_psx, d_smx_pre1, d_smy_pre1, d_smz_pre1, G1, G2, B);
 		cudaDeviceSynchronize();
 
 		
